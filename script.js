@@ -1,5 +1,3 @@
-
-
 const spotBtn = document.getElementById('spot-btn')
 const foodBtn = document.getElementById('food-btn')
 const spotHidden = document.querySelectorAll('.spot-hidden')
@@ -30,11 +28,3 @@ foodBtn.addEventListener('click', () => {
     }
 })
 
-// score range control
-
-const score = document.getElementById('score')
-const output = document.getElementById('output')
-score.addEventListener('change', ()=> {
-    // output.innerHTML = '';
-    output.innerHTML = score.value;
-})
