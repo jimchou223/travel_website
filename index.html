@@ -53,15 +53,15 @@
             <a href="tips/tips.html"><i class="far fa-lightbulb"></i> Feedback</a>
         </nav>
         <div id="hero-index"></div>
-        <button id="activate">Press me to open this website</button>
+
         <main id="main">
             <div class="main-intro">
                 <div class="main-intro-part-one">
                     <h2>Introduction</h2>
                     <audio controls="controls">
-                            <source src="audio/bensound-summer.mp3" type="audio/mpeg">
-                        </audio>
-                        <br><small id="enjoy-music">Enjoy the chill music during planning your trip to Taiwan!</small>
+                        <source src="audio/bensound-summer.mp3" type="audio/mpeg">
+                    </audio>
+                    <br><small id="enjoy-music">Enjoy the chill music during planning your trip to Taiwan!</small>
                     <p>Taiwan is an island of unexpected beauty. It also has a mysterious name called "Formosa". In
                         order to realize the meaning behind this mysterious name, we need to go back to 16th century,
                         the Age of Discovery. At that time a Portuguese ship accidentally sailed through the Taiwan
@@ -128,6 +128,7 @@
             </aside>
         </main>
         <footer>
+            <button id="activate">Press me to open this website</button>
             <p id="text-color-black">created 2019 September</p>
             <a href="mailto:jimchou223@gmail.com">jimchou223@gmail.com</a><br>
             <a href="#"><img src="icon/facebook.png" height=35 width=35></a>
@@ -141,18 +142,26 @@
         $(main).css('height', '0')
         // $('#main').css('height', '0')
         // $('#news').css( 'height', '0')
-        
-        $('#activate').click(function() {
-            $('#main').animate({height: "1000px"}, 1500)
+        let changeHeight
+        if ($(window).width() > 768) {
+            changeHeight = 1100
+        } else if ($(window).width() < 768) {
+            changeHeight = 1600
+        }
+        $('#activate').click(function () {
+            $('#main').animate({ height: `${changeHeight}px` }, 1500)
             $('#activate').hide()
         })
+
+
+
 
         $(document).ready(function () {
             setInterval(function () {
                 $('#enjoy-music').css('color', `rgb(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)})`)
             }, 300)
         })
-    
+
     </script>
 
 
